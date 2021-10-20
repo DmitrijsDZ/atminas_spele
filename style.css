@@ -1,0 +1,14 @@
+.wrapper  
+{
+    background: rgb(201, 196, 196);
+}
+h1
+{
+text-align: center;
+background-color: chocolate;
+}
+
+li
+{
+    display: inline-block;
+}
