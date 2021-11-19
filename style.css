@@ -1,18 +1,18 @@
 .wrapper  
 {
-    background: rgb(201, 196, 196);
+    background: rgba(0, 212, 35, 0.349);
 }
 h1
 {
 text-align: center;
-background-color: chocolate;
+background-color: rgb(231, 143, 80);
 }
 
 
 ul
 {
     text-align: center;
-    
+    padding: 0px; /*➕*/
 }
 
 
@@ -33,4 +33,41 @@ li
     width: 100px;
     height: 100px;
     border: 1px solid rgb(211, 12, 12)
+    text-align: center;  /*➕*/
+	margin: 5px;          /*➕*/
+    text-align: center;  /*➕*/
+	margin: 5px;          /*➕*/
+	font-size: 45px;     /*➕*/   
 }
+
+mybuttons {
+    font-size: 1.1em;
+    background-color: #EBF5FF;
+    
+    color: #4312AE;
+    border: 2px solid black;
+    box-shadow: 4px 4px 4px #999999;
+  }
+ 
+
+  .button {
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 44px;
+    margin: 4px 2px;
+    cursor: pointer;
+  } 
+  .button:hover, button:focus, button:active {
+        /* swap colors */
+        color: #EBF5FF;
+        background-color: #4312AE;
+        cursor: pointer; /* displays a hand */
+      }
+
+      

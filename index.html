@@ -9,6 +9,8 @@
 </head>
 <body>
   
+  
+    
 <div class="wrapper"> <! главный блок на всё страницу>  
     <div class="header">
         
@@ -47,18 +49,17 @@
 
 
      <div class="content">
-        <p>Noteikumu teksts</p>
+        <p id="demo">Uzmini vardus!!!!</p>
+        <p id="ievadburti">Ievaditi burti:</p>
+      
 
-        <div class="game">
+        <button type="button" onclick="myFunction()">Start the Game!</button>
+        <p id="Keyword">Vardi kādi var but:   </p>
+       
 
-            <div class="block">😃<div>
-            <div class="block">😎<div> 
-            <div class="block">🥳<div> 
-            <div class="block">😃<div> 
-            <div class="block">🥳<div> 
-            <div class="block">😎</div>
-        
-        
+        <div id="mybuttons">
+           
+            
         </div>
 
 
@@ -73,7 +74,68 @@
 
     </div><! beidzas wrapper> 
 
+    <script>
+      
+String.prototype.shuffle = function () {
+    var a = this.split(""),
+        n = a.length;
+
+    for(var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join("");
+}
+
+
+function myFunction()
+ {  
+      var key="";
+    var words = ["skola", "daugavpils", "kursi","malacis","super"]
+
+    for (let i = 0; i < words.length; i++) 
+    {
+    document.getElementById("Keyword").innerHTML +=words[i]+", ";
+    }
+
+
+    var rand = Math.floor( Math.random() * words.length );
+
     
+
+var shuffledWord = words[rand].shuffle();
+for (var i = 0; i < shuffledWord.length; i++ ) 
+{
+  
+  var button = document.createElement("button");
+    button.innerHTML = shuffledWord[i];
+    button.className = "button";
+    button.onclick = function()
+{
+    document.getElementById("ievadburti").innerHTML +=this.innerHTML;
+    
+    key+=this.innerHTML;
+   // document.getElementById("key").innerHTML =key+","+words[rand];
+    if(words[rand]===key) 
+    {
+        alert('Malacis! :)'); 
+   
+    }
+
+  //  button.style.backgroundColor="#7FFF00";
+}
+    var buttonDiv = document.getElementById("mybuttons");
+    buttonDiv.appendChild(button);
+
+}
+}
+
+
+    
+
+        </script>
 
 </body>
 </html>
