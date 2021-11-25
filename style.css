@@ -39,6 +39,10 @@ li
 	margin: 5px;          /*➕*/
 	font-size: 45px;     /*➕*/   
 }
+.block div 
+{
+    display: none;
+}
 
 mybuttons {
     font-size: 1.1em;
