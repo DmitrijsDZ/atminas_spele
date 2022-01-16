@@ -29,23 +29,18 @@
         
         <h1> 
              <a href ="index.html">
-             Atmiņas spēle
+              Uz sakuma lapu
              </a>
          </h1>
 
         <ul>
-            <li>
-                <a href="spele.html">
-                Spēle 
-            </a>
-            </li> 
             <li>
                 <a href="pspele.html">
                 Pielāgota spele
             </a>
              </li> 
             <li>
-                <a href="top.html">
+                <a href="tops.html">
                 Tops
             </a>
              </li>
@@ -84,11 +79,11 @@
           </div>
 
 
-        <p id="ievadburti">Ievadīti burti:</p>
-        <p id="iegutpunkti">Punkti:</p>
-        <button type="button" id="startbutton" onclick="myFunction()">Start the game!</button>
+        <p id="ievadburti" class="ievaditiburti">Ievadīti burti:</p>
+        <p id="iegutpunkti" class="iegutipunkti">Punkti:</p>
+        <button type="button" id="startbutton" class="myButton" onclick="myFunction()">Start the game!</button>
         <p id="Keyword">Kādi var būt vārdi:   </p>
-       
+        <button type="button" id="cleartextbtn" onclick="notirit_ievadburtus()">Notīrit burtus</button>
 
         <div id="mybuttons">
            
@@ -114,6 +109,7 @@ String.prototype.shuffle = function () {
     return a.join("");
 }
 
+//https://denis-creative.com/jstimer/
 function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
   var seconds = Math.floor((t / 1000) % 60);
@@ -169,6 +165,22 @@ var punktiparuzd=0;
 var atbildesskaitlis=0;
 var timeoff=false;
 
+function notirit_ievadburtus()
+{
+    document.getElementById("ievadburti").innerHTML ="Ievadīti burti:";
+    key="";
+}
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
 function deletebuttons()
 {
     for(var a=0;a<shuffledWord.length;a++)
@@ -187,7 +199,7 @@ function createbuttons()
         else if (limenis==3) {words=words3;punktiparuzd=4;}
         else  {words=words0;punkti=1;}
    
-    
+    words= shuffle(words);
         for (let i = 0; i < words.length; i++) 
     {
         hidekey=hidekey+words[i]+", ";
@@ -221,7 +233,7 @@ for (var i = 0; i < shuffledWord.length; i++ )
        
         ball=ball+punktiparuzd;
         document.getElementById("iegutpunkti").innerHTML ="Punkti: " +ball;
-        document.getElementById("ievadburti").innerHTML ="";
+        document.getElementById("ievadburti").innerHTML ="Ievadīti burti:";
         document.getElementById("Keyword").innerHTML ="";
         key="";
         hidekey="";

@@ -11,6 +11,20 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }
+
+.myButton.a {
+	background-color:#ff3232;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:16px 60px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
 .myButton:hover {
 	background-color:#44ccf5;
 }
@@ -94,6 +108,19 @@ ul.a {
     border-left: 6px solid #ff3232;
     background-color: rgb(211, 211, 211);
     font-size: 17px;
+}
+
+.ievaditiburti
+{
+    border-left: 6px solid #32a3ff;
+    background-color: rgb(211, 211, 211);
+    font-size: 18px;
+}
+.iegutipunkti
+{
+    border-left: 6px solid #ff32f5;
+    background-color: rgb(211, 211, 211);
+    font-size: 18px;
 }
 
 .wrapper  
