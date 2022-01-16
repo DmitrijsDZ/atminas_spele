@@ -12,9 +12,6 @@
     <script>
         let params = (new URL(document.location)).searchParams;
      //   console.log(params.get("name"));
-     //   console.log(params.get('vecums'));
-     //   console.log(params.get('regions'));
-     //   console.log(params.get('limenis'));
 
     let vards =params.get("name");
     let vecums =params.get('vecums'); 
@@ -50,7 +47,6 @@
             </a>
             </li>
 
-
         </ul>
      </div>
 
@@ -78,7 +74,6 @@
             </div>
           </div>
 
-
         <p id="ievadburti" class="ievaditiburti">Ievadīti burti:</p>
         <p id="iegutpunkti" class="iegutipunkti">Punkti:</p>
         <button type="button" id="startbutton" class="myButton" onclick="myFunction()">Start the game!</button>
@@ -87,7 +82,6 @@
 
         <div id="mybuttons">
            
-            
         </div>
 
     </div>
@@ -257,9 +251,6 @@ function myFunction()
         initializeClock('countdown', deadline);   
      createbuttons();
 }
-
-
-    
 
         </script>
 
