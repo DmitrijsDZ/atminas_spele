@@ -8,7 +8,8 @@
     <title>Atmiņas spēle</title>
 </head>
 <body>
-    
+
+     
     <div class="wrapper">
         
         <div class="header">
@@ -43,19 +44,47 @@
         </div><!--beidzas header-->
 
         <div class="content">
-            <h3 class="virsraksts">Noteikumu teksts</h3>
+            <h2>Noteikumu teksts</h2>
+            <p class="Mansnoteikums">
+                Spēlētāja uzdevums – no dotajiem burtiem salikt vārdu, kuru dators atzīst par pareizu.
+               <br> Spēles mērķis – ierobežotā laikā iegūt pēc iespējas vairāk punktu. Punktus iegūst par laikā saliktu vārdu. Vairāk punktu var iegūt par sarežģītāku (garāku) vārdu salikšanas laiku.
+               <br> <b>Sarežgitiba:</b>
+              
+                <br><b>Super vieglais līmenis-</b> 1 punkts par pareizi saliktu vardu
+                <br><b>Vieglais līmenis-</b>       2 punkts par pareizi saliktu vardu
+                <br><b>Vidējais līmenis-</b>       3 punkts par pareizi saliktu vardu
+                <br><b>HardCore līmenis-</b>       4 punkts par pareizi saliktu vardu
+             
+               
+               
+               
+               
+            </p>
 
-            Vārds: <input id="vards"/>
+
+            Vārds: <input class="css-input" id="vards"/>*
             <br>
-            Uzvārds: <input id="vecums"/>
             <br>
+            Vecums: <input class="css-input"id="vecums"/>*
+            <br>
+            <br>
+            Sarežgitiba: 
+            <select  id="limenis">
+            <option value="0">Super vieglais līmenis</option>
+            <option value="1">Vieglais līmenis</option>
+            <option value="2">Vidējais līmenis</option>
+            <option value="3">HardCore līmenis</option>
+            </select>
+            <br><br>
+            
             Reģions: 
             <select id="regions">
-            <option value="Vidzeme">Vidzeme</option>
             <option value="Latgale">Latgale</option>
+            <option value="Vidzeme">Vidzeme</option>
             <option value="Kurzeme">Kurzeme</option>
             </select>
-            <button  onclick="saktSpeli()">Sākt</button>>
+            <br><br>
+            <button class="myButton" onclick="saktSpeli()">Sākt</button>
 
 
 
@@ -70,19 +99,42 @@ function saktSpeli()
 {
     let vards =document.querySelector('#vards').value;
     let vecums =document.querySelector('#vecums').value; 
-    let regions =document.querySelector('#regions').value;  
+    let regions =document.querySelector('#regions').value;
+    let limenis =document.querySelector('#limenis').value;
+      
     console.log(vards);
 
-    if (vards=="")
+    if (vards=="" || vecums=="")
     {
-        alert('Ievadi vārdu!')
+        alert('Ievadi obligātus laukus!')
+    }
+     else if(vards.length<4 ||hasNumber(vards)==true)
+    {
+        alert('Ievadi pareizu vārdu!')
+    }
+  
+    //isNaN(123) https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number
+    
+    else if(vecums<4 ||vecums>90 || isNaN(vecums)==true)
+    {
+        alert('Ievadi pareizu vecumu!')
     }
      else
-      { window.location='spele.html#'+vards+','+vecums+','+regions
+      { 
+          window.location='burtuspele.html'+'?name='+vards+'&'+'vecums='+vecums+'&'+'regions='+regions+'&'+'limenis='+limenis
 
      }
 }
-  
+
+
+function isNumeric(str) {
+  if (typeof str != "string") return false // we only process strings!  
+  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+function hasNumber(myString) {
+  return /\d/.test(myString);
+}
   /*
   let vards;
   const valsts ="Latvija";

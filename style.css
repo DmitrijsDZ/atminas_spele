@@ -1,3 +1,101 @@
+.myButton {
+	background-color:#ff3232;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:16px 60px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#44ccf5;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.css-input {
+    padding: 2px;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: 0px 0px 15px rgba(175,153,183,.75);
+    text-shadow: 0px 0px 1px rgba(66,66,66,.75)
+}
+
+.css-input:focus {
+    outline:none;
+}
+
+
+ul.a {
+    list-style-type: circle;
+  }
+.countdown-title {
+    color: #396;
+    font-weight: 100;
+    font-size: 40px;
+    margin: 40px 0px 20px;
+  }
+  
+  .countdown {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .countdown-number {
+    padding: 10px;
+    border-radius: 3px;
+    background: #00bf96;
+    display: inline-block;
+  }
+  
+  .countdown-time {
+    padding: 15px;
+    border-radius: 3px;
+    background: #00816a;
+    display: inline-block;
+  }
+  
+  .countdown-text {
+    display: block;
+    padding-top: 5px;
+    font-size: 16px;
+  }
+  
+  .deadline-message{
+    display: none;
+    font-size: 24px;
+    font-style: italic;
+  }
+  
+  .visible{
+    display: block;
+  }
+  
+  .hidden{
+    display: none;
+  }
+
+.Mansnoteikums
+{
+    border-left: 6px solid #ff3232;
+    background-color: rgb(211, 211, 211);
+    font-size: 17px;
+}
+
 .wrapper  
 {
     background: rgba(0, 212, 35, 0.349);
@@ -32,17 +130,18 @@ li
     background-color: cyan;
     width: 100px;
     height: 100px;
-    border: 1px solid rgb(211, 12, 12)
-    text-align: center;  /*➕*/
-	margin: 5px;          /*➕*/
-    text-align: center;  /*➕*/
-	margin: 5px;          /*➕*/
-	font-size: 45px;     /*➕*/   
+    border: 1px solid rgb(211, 12, 12);
+    text-align: center;  
+	margin: 5px;          
+    text-align: center;  
+	margin: 5px;          
+	font-size: 45px;       
 }
 .block div 
 {
     display: none;
 }
+
 
 mybuttons {
     font-size: 1.1em;
@@ -54,7 +153,7 @@ mybuttons {
   }
  
 
-  .button {
+.button {
 
     background-color: #4CAF50; /* Green */
     border: none;
@@ -67,7 +166,7 @@ mybuttons {
     margin: 4px 2px;
     cursor: pointer;
   } 
-  .button:hover, button:focus, button:active {
+.button:hover, button:focus, button:active {
         /* swap colors */
         color: #EBF5FF;
         background-color: #4312AE;
