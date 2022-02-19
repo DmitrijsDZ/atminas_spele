@@ -118,6 +118,8 @@ function getTimeRemaining(endtime) {
   };
 }
 
+
+
 function initializeClock(id, endtime) {
   var clock = document.getElementById(id);
   var hoursSpan = clock.querySelector(".hours");
@@ -132,7 +134,30 @@ function initializeClock(id, endtime) {
       document.getElementById("deadline-message").className = "visible";
       clearInterval(timeinterval);
       timeoff=true;
+
+      let saveAction = confirm("Saglabājam Jūsu rezultātu?");
+        if (saveAction) {
+           
+        fetch( 'https://startitservers.dmitrijsdz.repl.co/top/new/'+vards+'/'+vecums+"/"+regions+'/'+limenis+'/'+ball );
+    
+          alert("Rezultāts tiek saglabāts");
+        } else 
+        {
+          alert("Sakam no jauna :)");
+          let loginAnchor = document.createElement('a');
+          document.body.appendChild(loginAnchor);
+          loginAnchor.style.display = 'none';
+          loginAnchor.href = 'index.html';
+          loginAnchor.click();
+
+        }
+
+
       return true;
+    
+
+      
+
     }
  
    
@@ -247,7 +272,7 @@ for (var i = 0; i < shuffledWord.length; i++ )
 }
 function myFunction()
  {    document.getElementById("startbutton").className = "hidden";
-      var deadline = new Date(Date.parse(new Date()) + 60 * 1000); // for endless timer
+      var deadline = new Date(Date.parse(new Date()) + 10 * 1000); // for endless timer
         initializeClock('countdown', deadline);   
      createbuttons();
 }
