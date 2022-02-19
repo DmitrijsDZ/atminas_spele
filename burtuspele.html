@@ -272,7 +272,7 @@ for (var i = 0; i < shuffledWord.length; i++ )
 }
 function myFunction()
  {    document.getElementById("startbutton").className = "hidden";
-      var deadline = new Date(Date.parse(new Date()) + 10 * 1000); // for endless timer
+      var deadline = new Date(Date.parse(new Date()) + 60 * 1000); // for endless timer
         initializeClock('countdown', deadline);   
      createbuttons();
 }
